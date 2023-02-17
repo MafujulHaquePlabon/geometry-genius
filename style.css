@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navbar {
+  height: 130px;
+  background-color: rgba(3, 74, 116, 0.1) !important ;
+  border-radius: 8px;
+  margin-bottom:20px !important;
+  margin-top: 40px !important;
+}
+.navbar-brand h1 {
+  color: rgba(17, 17, 17, 0.8);
+}
+.navbar-brand h3 {
+  color: rgba(17, 17, 17, 0.6);
+}
+.row,
+.navbar {
+  margin: 0 5%;
+}
+.card img {
+  height: 15rem;
+  padding-bottom: 10%;
+}
+.card .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  min-height: 560px;
+  padding: 10%;
+}
+.btnColor,
+.blog {
+  background: #1090d8;
+  border-radius: 8px;
+}
+.btnColor:hover,
+.blog:hover {
+  background: #0785ce;
+}
+.dFlex {
+  display: flex;
+  width: 100%;
+}
+.dFlex input {
+  width: 50%;
+}
