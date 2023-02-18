@@ -1,3 +1,6 @@
+document.getElementById('blog').addEventListener('click',function(){
+  window.location.href='blog.html';
+});
 /*============== card hover random background color================ */
 function randomColor() {
   let color = [];

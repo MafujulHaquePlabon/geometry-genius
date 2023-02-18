@@ -73,3 +73,6 @@ body {
 .dFlex input {
   width: 50%;
 }
+.card-body{
+  padding: 0;
+}
