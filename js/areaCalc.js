@@ -102,28 +102,47 @@ else if(isNaN(cardInput1Field.value) && !isNaN(cardInput2Field.value)) {
 /*================Card Area Formula set InnerText end================= */
     if (Number.isInteger(area)) {
       newElement.innerHTML = `
-      <div>
+   
+      <table class="table">
       <tr>
       <td>${cardTitleInnerText}</td>
       <td>${area}<span>cm<sup>2</sup></span></td>
-      <td> <button class="btn blog text-white fw-bold py-1 px-2" type="submit">Convert to m <sup>2</sup></button></td>
+      <td> <a  class="btn blog text-white fw-bold py-1 px-2" type="submit">Convert to m <sup>2</sup></a></td>
     </tr>
     <tr>
-      </div>`;
+      </table>`;
+      newElement.childNodes[1].childNodes[1].childNodes[0].childNodes[5].childNodes[1].addEventListener('click',function(){
+        newElement.innerHTML = `
+      <table class="table">
+      <tr>
+      <td>${cardTitleInnerText}</td>
+      <td>${area/100}<span>m<sup>2</sup></span></td>
+    </tr>
+    <tr>
+      </table>`;
+      });
     }
     // Float 
     else {
       newElement.innerHTML = `
-      <div>
+      <table class="table">
       <tr>
       <td>${cardTitleInnerText}</td>
       <td>${area.toFixed(2)}<span>cm<sup>2</sup></span></td>
-      <td> <button class="btn blog text-white fw-bold py-1 px-2" type="submit">Convert to m <sup>2</sup></button></td>
     </tr>
     <tr>
-      </div>`;
+      </table>`;
+      newElement.childNodes[1].childNodes[1].childNodes[0].childNodes[5].childNodes[1].addEventListener('click',function(){
+        newElement.innerHTML = `
+      <table class="table">
+      <tr>
+      <td>${cardTitleInnerText}</td>
+      <td>${(area.toFixed(2)/100).toFixed(5)}<span>m<sup>2</sup></span></td>
+    </tr>
+    <tr>
+      </table>`;
+      });
     }
-
 } 
   areaParent.appendChild(newElement);
   cardInput1Field.value='';
@@ -216,28 +235,49 @@ if(typeof area == 'number' && !isNaN(area)){
  const cardAreaFormulaInnerText2 = document.getElementById(areaFormulaInnerText2);
  cardAreaFormulaInnerText2.innerText=cardInput2Value;
 /*================Card Area Formula set InnerText end================= */
-  if (Number.isInteger(area)) {
-    newElement.innerHTML = `
-    <div>
-    <tr>
-    <td>${cardTitleInnerText}</td>
-    <td>${area}<span>cm<sup>2</sup></span></td>
-    <td> <button class="btn blog text-white fw-bold py-1 px-2" type="submit">Convert to m <sup>2</sup></button></td>
-  </tr>
+if (Number.isInteger(area)) {
+  newElement.innerHTML = `
+
+  <table class="table">
   <tr>
-    </div>`;
-  }
-  // Float 
-  else {
+  <td>${cardTitleInnerText}</td>
+  <td>${area}<span>cm<sup>2</sup></span></td>
+  <td> <a  class="btn blog text-white fw-bold py-1 px-2" type="submit">Convert to m <sup>2</sup></a></td>
+</tr>
+<tr>
+  </table>`;
+  newElement.childNodes[1].childNodes[1].childNodes[0].childNodes[5].childNodes[1].addEventListener('click',function(){
     newElement.innerHTML = `
-    <div>
-    <tr>
-    <td>${cardTitleInnerText}</td>
-    <td>${area.toFixed(2)}<span>cm<sup>2</sup></span></td>
-    <td> <button class="btn blog text-white fw-bold py-1 px-2" type="submit">Convert to m <sup>2</sup></button></td>
-  </tr>
+  <table class="table">
   <tr>
-    </div>`;
+  <td>${cardTitleInnerText}</td>
+  <td>${area/100}<span>m<sup>2</sup></span></td>
+</tr>
+<tr>
+  </table>`;
+  });
+}
+// Float 
+else {
+  newElement.innerHTML = `
+  <table class="table">
+  <tr>
+  <td>${cardTitleInnerText}</td>
+  <td>${area.toFixed(2)}<span>cm<sup>2</sup></span></td>
+  <td> <button class="btn blog text-white fw-bold py-1 px-2" type="submit">Convert to m <sup>2</sup></button></td>
+</tr>
+<tr>
+  </table>`;
+  newElement.childNodes[1].childNodes[1].childNodes[0].childNodes[5].childNodes[1].addEventListener('click',function(){
+    newElement.innerHTML = `
+  <table class="table">
+  <tr>
+  <td>${cardTitleInnerText}</td>
+  <td>${(area.toFixed(2)/100).toFixed(5)}<span>m<sup>2</sup></span></td>
+</tr>
+<tr>
+  </table>`;
+  });
   }
 }
     areaParent.appendChild(newElement);
@@ -322,28 +362,49 @@ cardAreaFormulaInnerText2.innerText=cardInput2Value;
 const piValue=document.getElementById(piId);
 piValue.innerText='3.14';
 /*================Card Area Formula set InnerText end================= */
-  if (Number.isInteger(area)) {
-    newElement.innerHTML = `
-    <div>
-    <tr>
-    <td>${cardTitleInnerText}</td>
-    <td>${area}<span>cm<sup>2</sup></span></td>
-    <td> <button class="btn blog text-white fw-bold py-1 px-2" type="submit">Convert to m <sup>2</sup></button></td>
-  </tr>
+if (Number.isInteger(area)) {
+  newElement.innerHTML = `
+
+  <table class="table">
   <tr>
-    </div>`;
-  }
-  // Float 
-  else {
+  <td>${cardTitleInnerText}</td>
+  <td>${area}<span>cm<sup>2</sup></span></td>
+  <td> <a  class="btn blog text-white fw-bold py-1 px-2" type="submit">Convert to m <sup>2</sup></a></td>
+</tr>
+<tr>
+  </table>`;
+  newElement.childNodes[1].childNodes[1].childNodes[0].childNodes[5].childNodes[1].addEventListener('click',function(){
     newElement.innerHTML = `
-    <div>
-    <tr>
-    <td>${cardTitleInnerText}</td>
-    <td>${area.toFixed(2)}<span>cm<sup>2</sup></span></td>
-    <td> <button class="btn blog text-white fw-bold py-1 px-2" type="submit">Convert to m <sup>2</sup></button></td>
-  </tr>
+  <table class="table">
   <tr>
-    </div>`;
+  <td>${cardTitleInnerText}</td>
+  <td>${area/100}<span>m<sup>2</sup></span></td>
+</tr>
+<tr>
+  </table>`;
+  });
+}
+// Float 
+else {
+  newElement.innerHTML = `
+  <table class="table">
+  <tr>
+  <td>${cardTitleInnerText}</td>
+  <td>${area.toFixed(2)}<span>cm<sup>2</sup></span></td>
+  <td> <button class="btn blog text-white fw-bold py-1 px-2" type="submit">Convert to m <sup>2</sup></button></td>
+</tr>
+<tr>
+  </table>`;
+  newElement.childNodes[1].childNodes[1].childNodes[0].childNodes[5].childNodes[1].addEventListener('click',function(){
+    newElement.innerHTML = `
+  <table class="table">
+  <tr>
+  <td>${cardTitleInnerText}</td>
+  <td>${(area.toFixed(2)/100).toFixed(5)}<span>m<sup>2</sup></span></td>
+</tr>
+<tr>
+  </table>`;
+  });
   }
 }
     areaParent.appendChild(newElement);
