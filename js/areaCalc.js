@@ -46,7 +46,7 @@ document.getElementById("card7").addEventListener("mouseout", (event) => {
   document.getElementById("card7").style.backgroundColor = "white";
 });
 /* ==============triangle,rhombus,pentagon function========================= */
-function getAreaTRP(cardFirstInput, card2ndInput, cardtitle, areaparent) {
+function getAreaTRP(cardFirstInput, card2ndInput, cardtitle, areaparent,areaFormulaInnerText1,areaFormulaInnerText2) {
   const cardInput1Field = document.getElementById(cardFirstInput);
   const cardInput1Value = parseFloat(cardInput1Field.value);
   const cardInput2Field = document.getElementById(card2ndInput);
@@ -94,6 +94,12 @@ else if(isNaN(cardInput1Field.value) && !isNaN(cardInput2Field.value)) {
   }
    /*============Number.isInteger()/ Float check=============== */
   if(typeof area == 'number' && !isNaN(area)){
+  /*================Card Area Formula InnerText set================= */
+    const cardAreaFormulaInnerText1 = document.getElementById(areaFormulaInnerText1);
+    cardAreaFormulaInnerText1.innerText=cardInput1Value;
+  const cardAreaFormulaInnerText2 = document.getElementById(areaFormulaInnerText2);
+  cardAreaFormulaInnerText2.innerText=cardInput2Value;
+/*================Card Area Formula set InnerText end================= */
     if (Number.isInteger(area)) {
       newElement.innerHTML = `
       <div>
@@ -130,7 +136,8 @@ document
       "card1-Base-Input",
       "card1-Height-Input",
       "card-title-triangle",
-      "area-Parent"
+      "area-Parent","triangle-base",
+      "triangle-height"
     );
   });
 document
@@ -140,7 +147,8 @@ document
       "card6-D1-Input",
       "card6-D2-Input",
       "card-title-rhombus",
-      "area-Parent"
+      "area-Parent","rhombus-d1",
+      "rhombus-d2"
     );
   });
 document
@@ -150,7 +158,8 @@ document
       "card6-P-Input",
       "card6-B-Input",
       "card-title-pentagon",
-      "area-Parent"
+      "area-Parent","pentagon-p",
+      "pentagon-b"
     );
   });
   /*=================Rectangle,Parallelogram function==================== */
