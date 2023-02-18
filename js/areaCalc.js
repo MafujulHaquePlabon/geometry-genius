@@ -163,7 +163,7 @@ document
     );
   });
   /*=================Rectangle,Parallelogram function==================== */
-  function getAreaRectangleParallelogram(cardFirstInput, card2ndInput, cardtitle, areaparent) {
+  function getAreaRectangleParallelogram(cardFirstInput, card2ndInput, cardtitle, areaparent,areaFormulaInnerText1,areaFormulaInnerText2) {
     const cardInput1Field = document.getElementById(cardFirstInput);
     const cardInput1Value = parseFloat(cardInput1Field.value);
     const cardInput2Field = document.getElementById(card2ndInput);
@@ -210,6 +210,12 @@ else if(isNaN(cardInput1Field.value) && isNaN(cardInput2Field.value)) {
 }
  /*============Number.isInteger()/ Float check=============== */
 if(typeof area == 'number' && !isNaN(area)){
+   /*================Card Area Formula InnerText set================= */
+   const cardAreaFormulaInnerText1 = document.getElementById(areaFormulaInnerText1);
+   cardAreaFormulaInnerText1.innerText=cardInput1Value;
+ const cardAreaFormulaInnerText2 = document.getElementById(areaFormulaInnerText2);
+ cardAreaFormulaInnerText2.innerText=cardInput2Value;
+/*================Card Area Formula set InnerText end================= */
   if (Number.isInteger(area)) {
     newElement.innerHTML = `
     <div>
@@ -245,7 +251,8 @@ if(typeof area == 'number' && !isNaN(area)){
       "card2-W-Input",
       "card2-I-Input",
       "card-title-rectangle",
-      "area-Parent"
+      "area-Parent","rectangle-w",
+      "rectangle-l"
     );
   });
   document
@@ -255,7 +262,8 @@ if(typeof area == 'number' && !isNaN(area)){
       "card2-B-Input",
       "card2-H-Input",
       "card-title-parallelogram",
-      "area-Parent"
+      "area-Parent","parallelogram-b",
+      "parallelogram-h"
     );
   });
   /*=================Ellipse function======================= */
