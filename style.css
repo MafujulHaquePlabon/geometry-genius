@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@700&family=Poppins:wght@500&family=Roboto+Slab:wght@700&family=Roboto:wght@700&display=swap');
 body {
   margin: 0;
   padding: 0;
@@ -9,12 +10,24 @@ body {
   border-radius: 8px;
   margin-bottom:20px !important;
   margin-top: 40px !important;
+  font-family: 'Bebas Neue', cursive;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Slab', serif;
 }
 .navbar-brand h1 {
   color: rgba(17, 17, 17, 0.8);
 }
 .navbar-brand h3 {
   color: rgba(17, 17, 17, 0.6);
+}
+.card-body h3{
+  font-family: 'Bebas Neue', cursive;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Slab', serif;
 }
 .row,
 .navbar {
@@ -36,6 +49,13 @@ body {
 #card4 {
   min-height: 560px;
   padding: 2%;
+}
+#card4 h5{
+  font-family: 'Bebas Neue', cursive;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Slab', serif;
 }
 .btnColor,
 .blog {

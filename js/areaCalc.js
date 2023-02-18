@@ -142,4 +142,38 @@ document
       "area-Parent"
     );
   });
-  
+  /*=================Ellipse function======================= */
+  function getAreaEllipse(cardFirstInput, card2ndInput, cardtitle, areaparent) {
+    const cardInput1Field = document.getElementById(cardFirstInput);
+    const cardInput1Value = parseFloat(cardInput1Field.value);
+    const cardInput2Field = document.getElementById(card2ndInput);
+    const cardInput2Value = parseFloat(cardInput2Field.value);
+    const area = parseFloat(3.14)*cardInput1Value * cardInput2Value;
+    const cardTitle = document.getElementById(cardtitle);
+    const cardTitleInnerText = cardTitle.innerText;
+    const areaParent = document.getElementById(areaparent);
+    const newElement = document.createElement("li");
+    newElement.setAttribute("class", "py-2");
+    newElement.innerHTML = `
+      <div>
+      <tr>
+      <td>${cardTitleInnerText}</td>
+      <td>${area}<span>cm<sup>2</sup></span></td>
+      <td> <button class="btn blog text-white fw-bold py-1 px-2" type="submit">Convert to m <sup>2</sup></button></td>
+    </tr>
+    <tr>
+      </div>`;
+    areaParent.appendChild(newElement);
+    cardInput1Field.value='';
+    cardInput2Field.value='';
+  }
+  document
+  .getElementById("card7-Calc-Btn")
+  .addEventListener("click", function () {
+    getAreaEllipse(
+      "card7-A-Input",
+      "card7-B-Input",
+      "card-title-ellipse",
+      "area-Parent"
+    );
+  });
