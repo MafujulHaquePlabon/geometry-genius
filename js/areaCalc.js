@@ -261,15 +261,66 @@ if(typeof area == 'number' && !isNaN(area)){
     const areaParent = document.getElementById(areaparent);
     const newElement = document.createElement("li");
     newElement.setAttribute("class", "py-2");
+   /*==================error handling============================*/
+  /*====================empty input field check==================== */
+ if(cardInput1Field.value=='' || cardInput2Field.value ==''){
+  alert(`please give two inputs!`);
+  cardInput1Field.value='';
+  cardInput2Field.value='';
+  return;
+}
+/*====================negative input check==================== */
+else if (Math.sign(cardInput1Field.value) === -1 || Math.sign(cardInput2Field.value) === -1) {
+ alert(`please give positive number of input!`);
+  cardInput1Field.value='';
+  cardInput2Field.value='';
+  return;
+}
+  /*============isNaN or !isNaN  user input value check=============== */
+ else if(!isNaN(cardInput1Field.value) && isNaN(cardInput2Field.value)) {
+   alert(`${cardInput2Field.value} is not a number Please enter number`);
+   cardInput1Field.value='';
+   cardInput2Field.value='';
+   return;
+}
+else if(isNaN(cardInput1Field.value) && !isNaN(cardInput2Field.value)) {
+alert(`${cardInput1Field.value} is not a number Please enter number`);
+cardInput1Field.value='';
+cardInput2Field.value='';
+return;
+}
+else if(isNaN(cardInput1Field.value) && isNaN(cardInput2Field.value)) {
+    alert(`${cardInput1Field.value} and ${cardInput2Field.value} both is not a number Please enter number`); 
+    cardInput1Field.value='';
+    cardInput2Field.value='';
+    return;
+}
+ /*============Number.isInteger()/ Float check=============== */
+if(typeof area == 'number' && !isNaN(area)){
+  if (Number.isInteger(area)) {
     newElement.innerHTML = `
-      <div>
-      <tr>
-      <td>${cardTitleInnerText}</td>
-      <td>${area}<span>cm<sup>2</sup></span></td>
-      <td> <button class="btn blog text-white fw-bold py-1 px-2" type="submit">Convert to m <sup>2</sup></button></td>
-    </tr>
+    <div>
     <tr>
-      </div>`;
+    <td>${cardTitleInnerText}</td>
+    <td>${area}<span>cm<sup>2</sup></span></td>
+    <td> <button class="btn blog text-white fw-bold py-1 px-2" type="submit">Convert to m <sup>2</sup></button></td>
+  </tr>
+  <tr>
+    </div>`;
+  }
+  // Float 
+  else {
+    newElement.innerHTML = `
+    <div>
+    <tr>
+    <td>${cardTitleInnerText}</td>
+    <td>${area.toFixed(2)}<span>cm<sup>2</sup></span></td>
+    <td> <button class="btn blog text-white fw-bold py-1 px-2" type="submit">Convert to m <sup>2</sup></button></td>
+  </tr>
+  <tr>
+    </div>`;
+  }
+}
     areaParent.appendChild(newElement);
     cardInput1Field.value='';
     cardInput2Field.value='';
