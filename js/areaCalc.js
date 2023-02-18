@@ -267,7 +267,7 @@ if(typeof area == 'number' && !isNaN(area)){
     );
   });
   /*=================Ellipse function======================= */
-  function getAreaEllipse(cardFirstInput, card2ndInput, cardtitle, areaparent) {
+  function getAreaEllipse(cardFirstInput, card2ndInput, cardtitle, areaparent,areaFormulaInnerText1,areaFormulaInnerText2,piId) {
     const cardInput1Field = document.getElementById(cardFirstInput);
     const cardInput1Value = parseFloat(cardInput1Field.value);
     const cardInput2Field = document.getElementById(card2ndInput);
@@ -314,6 +314,14 @@ else if(isNaN(cardInput1Field.value) && isNaN(cardInput2Field.value)) {
 }
  /*============Number.isInteger()/ Float check=============== */
 if(typeof area == 'number' && !isNaN(area)){
+  /*================Card Area Formula InnerText set================= */
+  const cardAreaFormulaInnerText1 = document.getElementById(areaFormulaInnerText1);
+  cardAreaFormulaInnerText1.innerText=cardInput1Value;
+const cardAreaFormulaInnerText2 = document.getElementById(areaFormulaInnerText2);
+cardAreaFormulaInnerText2.innerText=cardInput2Value;
+const piValue=document.getElementById(piId);
+piValue.innerText='3.14';
+/*================Card Area Formula set InnerText end================= */
   if (Number.isInteger(area)) {
     newElement.innerHTML = `
     <div>
@@ -349,6 +357,7 @@ if(typeof area == 'number' && !isNaN(area)){
       "card7-A-Input",
       "card7-B-Input",
       "card-title-ellipse",
-      "area-Parent"
+      "area-Parent","ellipse-a",
+      "ellipse-b","pi"
     );
   });
