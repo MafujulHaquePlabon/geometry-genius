@@ -129,6 +129,7 @@ else if(isNaN(cardInput1Field.value) && !isNaN(cardInput2Field.value)) {
       <tr>
       <td>${cardTitleInnerText}</td>
       <td>${area.toFixed(2)}<span>cm<sup>2</sup></span></td>
+      <td> <button class="btn blog text-white fw-bold py-1 px-2" type="submit">Convert to m <sup>2</sup></button></td>
     </tr>
     <tr>
       </table>`;
