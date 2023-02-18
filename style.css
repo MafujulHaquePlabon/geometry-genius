@@ -33,6 +33,10 @@ body {
   min-height: 560px;
   padding: 10%;
 }
+#card4 {
+  min-height: 560px;
+  padding: 2%;
+}
 .btnColor,
 .blog {
   background: #1090d8;
